@@ -1,0 +1,47 @@
+
+<% provide(:current_page, "") %>
+<% provide(:current_page_version, "") %>
+
+<!-- Left side column app. contains the features -->
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+
+<div class="container" style="width: 600px;">
+<img src="assets/espacoviverbem.jpg" class="img-responsive displayed" alt="">
+</div>
+</br>
+<div class="container">
+  <div class="row">
+
+    <div class="col">
+        <a href="/triagems">
+      <div class="info-box">
+        <span class="info-box-icon bg-green-active adaptable">
+          <i class="fa fa-address-card"></i>
+        </span>
+        <div class="info-box-content">
+          <span class="info-box-text">Triagem</span>
+          <span class="info-box-number">v1.0</span>
+        </div>
+      </div>
+    </a>
+    </div>
+    <div class="col">
+      <a href="/pacientes">
+      <div class="info-box">
+        <span class="info-box-icon bg-green-active adaptable">
+          <i class="fa fa-address-book-o"></i>
+        </span>
+        <div class="info-box-content">
+          <span class="info-box-text">Cadastro Paciente</span>
+          <span class="info-box-number">v1.0</span>
+        </div>
+      </div>
+    </a>
+    </div>
+  
+  </div>
+
+  </div>
+</div>

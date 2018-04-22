@@ -1,0 +1,40 @@
+<%= render 'shared/errors', object: f.object %>
+
+
+<div class="form-group">
+  <%= f.label :email %>
+  <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :opm_id, "OPM de Trabalho" %>
+  <%= f.select :opm_id, Opm.all.collect {|opm| [opm.name.titleize, opm.id]}, {include_blank: 'Selecione uma OPM'}, { class: 'form-control' } %>
+</div>
+
+<%= f.hidden_field 'permission_ids[]', value: [] %>
+<%= hidden_field_tag 'permission_ids[]'%>
+
+<div class="form-group">
+  <%= f.label "Papeis"%>
+  <ul>
+  <% Permission.all.each do |permission| %>
+
+    <li>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "permission_ids[]", permission.id, user.permissions.include?(permission), id: "user_#{permission.name}"%>
+          <%= f.label permission.human_name %>
+        </label>
+      </div>
+    </li>
+
+  <% end %>
+  </ul>
+</div>
+<script>
+    $('.input-group.date').datepicker({
+    	format: 'dd/mm/yyyy',
+    	language: 'pt-BR',
+    	todayHighlight: true
+    });
+</script>

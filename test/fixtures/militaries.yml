@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rank: 1
+  registration: MyString
+  admission_date: 2017-04-16
+  t_shirt_size: 1
+  boot_size: 1
+  beret_size: 1
+  pants_size: 1
+  user: one
+
+two:
+  name: MyString
+  rank: 1
+  registration: MyString
+  admission_date: 2017-04-16
+  t_shirt_size: 1
+  boot_size: 1
+  beret_size: 1
+  pants_size: 1
+  user: two

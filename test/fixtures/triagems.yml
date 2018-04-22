@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome_paciente: MyString
+  desc_hist_tratamento: MyText
+  desc_hist_medic: MyText
+  psicoterapia: false
+  queixa: MyText
+  estado_paciente: MyString
+
+two:
+  nome_paciente: MyString
+  desc_hist_tratamento: MyText
+  desc_hist_medic: MyText
+  psicoterapia: false
+  queixa: MyText
+  estado_paciente: MyString

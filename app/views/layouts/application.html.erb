@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Core - PMPB</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+        <%= javascript_include_tag 'application' %>
+
+    </head>
+
+    <body class="hold-transition skin-red sidebar-mini">
+        <div class="wrapper">
+            <%= render 'layouts/header' %>
+            <%= render 'layouts/left_side_menu' %>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                      <%= yield(:current_page) %>
+                      <small><%= yield(:current_page_version) %></small>
+                    </h1>
+                    <!-- v1.2.3 = 1: mudança estrutural / 2: mudança funcional / 3: refatoramento -->
+
+                    <% flash.each do |message_type, message| %>
+                      <% alert_class = message_type == 'notice' ? 'success' : message_type %>
+                      <%= content_tag 'div', class: "alert alert-#{alert_class} alert-dismissible", role: 'alert' do %>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <%= message %>
+                      <% end %>
+                    <% end %>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <%= yield %>
+
+                    <!-- Modals to create/update/delete objects -->
+                    <div id="my-modal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content" id="modal-loading-msg">
+                                <div class="modal-title text-center">
+                                    <h1>Carregando</h1>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                            <span class="sr-only">Carregando</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer"></div>
+                            </div>
+                            <div class="modal-content" id="my-modal-form">
+                                <!-- Insert dinamic content here -->
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+
+            <%= render 'layouts/footer' %>
+            <%= render 'layouts/right_side_menu' %>
+        </div>
+        <!-- ./wrapper -->
+    </body>
+</html>

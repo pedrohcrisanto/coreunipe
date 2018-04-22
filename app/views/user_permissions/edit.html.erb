@@ -1,0 +1,108 @@
+<% provide(:current_page, "Permissões de Usuários") %>  <!--Titulo no content header-->
+<% provide(:current_page_version, "Conceder Permissões") %> <!--Versão do aplicativo-->
+
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><font>Permissões de <strong><%= "#{@user.person.full_name.humanize}" %> </strong></font></h3>
+      </div>
+      <div class="box-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>
+                <font>Papel </font>
+              </th>
+              <th>
+                <font>Categoria</font>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user_permissions.each do |permissao| %>
+              <tr class="form-group">
+                <td class="btn btn-block form-control remove" id="<%= permissao.id %>" style="text-align: left; padding: 0px">
+                  <%= link_to user_permission_path(permissao.id), method: :delete, data: {confirm: "Voce tem certeza?"} do %>
+                  <font id="<%= @user.id %>"> <%= Permission.find_by_id(permissao.permission_id).name.humanize %></font>
+                  <% end %>
+                </td>
+                <td class="" id="<%= permissao.id %>" style="text-align: left; padding: 0px">
+                  <font id="<%= @user.id %>"> <%= permissao.category %></font>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>
+                <font>Papel</font>
+              </th>
+              <th>
+                <font>Categoria</font>
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- ################################################################################################# -->
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><font>Permissões disponíveis:</font></h3>
+      </div>
+      <div class="box-body">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>
+                <font>Papel</font>
+              </th>
+              <th>
+                <font>Categoria</font>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @permissions.each do |permissao| %>
+              <% if !@user_permissions.pluck(:permission_id).include?(permissao[0]) %>
+                <tr class="form-group">
+                  <td class="btn btn-block form-control add" id="<%= permissao[0] %>" style="text-align: left; padding: 0px">
+                    <font id="<%= @user.id %>"> <%= permissao[1].humanize %></font>
+                  </td>
+                  <td class="categories" id="<%= permissao[0] %>" style="padding: 0px">
+                    <%= select_tag( permissao[0], options_for_select([['adicional'],['generico'],['funcional']]), class: "form-control") %>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>
+                <font>Papel</font>
+              </th>
+              <th>
+                <font>Categoria</font>
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form" style="display: none">
+  <%= form_for @user_permission, html: { role: 'form'} do |f| %>
+    <%= f.text_field :user_id %>
+    <%= f.text_field :permission_id %>
+    <%= f.text_field :category %>
+    <%= f.submit %>
+  <% end %>
+
+</div>

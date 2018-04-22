@@ -1,0 +1,127 @@
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+<p id="notice"><%= notice %></p>
+<div class="box box-primary container box-body">
+<p>
+  <strong>Nome:</strong>
+  <br>
+  <%= @paciente.nome %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <br>
+  <%= @paciente.cep %>
+</p>
+
+<p>
+  <strong>Complemento:</strong>
+  <br>
+  <%= @paciente.complemento %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <br>
+  <%= @paciente.telefone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <br>
+  <%= @paciente.email %>
+</p>
+
+<p>
+  <strong>Data nasc:</strong>
+  <br>
+  <%= @paciente.data_nasc %>
+</p>
+
+<p>
+  <strong>Sexo:</strong>
+  <br>
+  <%= @paciente.sexo %>
+</p>
+
+<p>
+  <strong>Escolaridade:</strong>
+  <br>
+  <%= @paciente.escolaridade %>
+</p>
+
+<p>
+  <strong>Naturalidade:</strong>
+  <br>
+  <%= @paciente.naturalidade %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <br>
+  <%= @paciente.estado_civil %>
+</p>
+
+<p>
+  <strong>Filhos:</strong>
+  <br>
+  <%= @paciente.filhos %>
+</p>
+
+<p>
+  <strong>Qnt filhos:</strong>
+  <br>
+  <%= @paciente.qnt_filhos %>
+</p>
+
+<p>
+  <strong>Profissao:</strong>
+  <br>
+  <%= @paciente.profissao %>
+</p>
+
+<p>
+  <strong>Religiao:</strong>
+  <br>
+  <%= @paciente.religiao %>
+</p>
+
+<p>
+  <strong>Pm:</strong>
+  <br>
+  <%= @paciente.pm %>
+</p>
+
+<p>
+  <strong>Matricula:</strong>
+  <br>
+  <%= @paciente.matricula %>
+</p>
+
+<p>
+  <strong>Rg:</strong>
+  <br>
+  <%= @paciente.rg %>
+</p>
+
+<p>
+  <strong>Graduacao:</strong>
+  <br>
+  <%= @paciente.graduacao %>
+</p>
+
+<p>
+  <strong>Unidade:</strong>
+  <br>
+  <%= @paciente.unidade %>
+</p>
+
+<p>
+  <strong>Subunidade:</strong>
+  <br>
+  <%= @paciente.subunidade %>
+</p>
+</table>
+<%= link_to 'Editar', edit_paciente_path(@paciente) %> |
+<%= link_to 'Voltar', pacientes_path %>

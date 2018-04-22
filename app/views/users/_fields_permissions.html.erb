@@ -1,0 +1,30 @@
+<%= f.hidden_field 'permission_ids[]', value: [] %>
+<%= hidden_field_tag 'permission_ids[]'%>
+
+<div class="form-group">
+  <%= f.label "Papeis"%>
+  <ul>
+    <% Permission.all.each do |permission| %>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-3 checkbox">
+            <label>
+              <%= check_box_tag "permission_ids[]", permission.id, user.permissions.include?(permission), id: "user_#{permission.name}"%>
+              <%= f.label permission.human_name %>
+            </label>
+          </div>
+          <div class="col-md-9">
+            <%= select_tag(:category, options_for_select([['Adicional', 'adicional'],['Funcional', 'funcional'], ['Genérico', 'generico']]), { class: 'form-control' }) %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<script>
+    $('.input-group.date').datepicker({
+    	format: 'dd/mm/yyyy',
+    	language: 'pt-BR',
+    	todayHighlight: true
+    });
+</script>

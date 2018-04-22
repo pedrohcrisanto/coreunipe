@@ -1,0 +1,211 @@
+pt-BR:
+  # Messages
+
+  controllers:
+    permissions: 'Papeis'
+    opms:        'Organizações Policiais Militares'
+    users:       'Usuários'
+    addresses:   'Endereços'
+    actions:
+      new:       'Formulário de Cadastro'
+      create:    'Salvar'
+      edit:      'Formulário de Atualização'
+      update:    'Atualizar'
+      show:      'Vizualizar'
+      index:     'Buscar/Listar'
+      destroy:   'Excluir'
+
+  messages:
+    user_update:
+      success: 'Perfil atualizado com sucesso.'
+
+  # Date Format
+  time:
+     formats:
+       default: "%A, %d de %B de %Y, %H:%M h"
+       short: "%d/%m/%Y, %H:%M h"
+       long: "%A, %d de %B de %Y, %H:%M h"
+       document: "%d de %B de %Y"
+  date:
+      formats:
+        default: "%d/%m/%Y"
+        short: "%d de %B"
+        long: "%d de %B de %Y"
+      day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+      abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+      month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+      abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+      order: [day, month, year]
+  helpers:
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Cadastrar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
+
+  # ActiveRecord Models
+  activerecord:
+    models:
+      user:
+        one:                    'Usuário'
+        other:                  'usuários'
+      city:
+        one:                    'Cidade'
+        many:                   'Cidades'
+      calling_plan:
+        one:                    'Plano de Chamada'
+        other:                  'Planos de Chamada'
+      state:
+        one:                    'Estado'
+        other:                  'Estados'
+      military_rank:
+        one:                    'Posto/Graduação'
+        other:                  'Postos/Graduações'
+      opm:
+        one:                    'OPM'
+        other:                  'OPMs'
+      role:
+        one:                    'Papel'
+        other:                  'Papeis'
+      address:
+        one:                    'Endereço'
+        other:                  'Endereços'
+
+    attributes:
+      user:
+        first_name:             'Nome'
+        last_name:              'Sobrenome'
+        email:                  'Email'
+        cpf:                    'CPF'
+        password:               'Senha'
+        password_confirmation:  'Confirmação da senha'
+        rank:                   'Graduação'
+        military:               'Militar'
+        inactive:               'Inativo'
+        beret_size:             'Número da Boina'
+        t_shirt_size:           'Número da Gandola'
+        pants_size:             'Número da Calça'
+        boot_size:              'Número do Coturno'
+        birth_date:             'Data de Nascimento'
+        admission_date:         'Data de Ingresso'
+        registration:           'Matrícula'
+        home_phone:             'Telefone Fixo'
+        mobile_phone:           'Celular'
+        address:                'Endereço'
+        complement:             'Complemento'
+        neighbourhood:          'Bairro'
+        city:                   'Cidade'
+        state:                  'Estado'
+        active:                 'Ativo'
+        opm:                   'Unidade de Trabalho'
+
+      city:
+        name:                   'Nome'
+      state:
+        name:                   'Nome'
+        acronym:                'Sigla'
+
+      opm:
+        name:                   'Nome'
+        city:                   'Cidade'
+        address:                'Endereço'
+        zip_code:               'CEP'
+
+      placement:
+        start_date:             'Data Inicial'
+        end_date:               'Data Final'
+
+      police_report/report:
+        reason:                     'Natureza da Ocorrência'
+        car_prefix:                 'Prefixo da Viatura'
+        receiver_name:              'Recebedor'
+        receiver_registration:      'Matrícula do Recebedor'
+        report_date:                'Data e hora da ocorrência'
+        time:                       'Hora'
+        origin:                     'Origem'
+        summary:                    'Relato'
+        place:                      'Nome do Local'
+        address:                    'Endereço'
+        number:                     'Número'
+        complement:                 'Complemento'
+        neighbourhood:              'Bairro'
+        city:                       'Cidade'
+        zip_code:                   'CEP'
+        reference_point:            'Ponto de Referência'
+        has_physical_damage:        'Houve lesão física?'
+        has_weapon_use:             'Houve uso de arma de fogo?'
+        has_weapon_in_scene:        'Houve uso de arma entre os envolvidos?'
+        has_domestic_violence:      'Houve violência doméstica?'
+        has_handcoffs:              'Houve uso de algemas?'
+        has_elder:                  'Houve idosos envolvidos?'
+        has_death:                  'Houve morte na ocorrência?'
+        has_drugs:                  'Houve apreensão de drogas?'
+        has_threat:                 'Houve ofensa moral?'
+        has_defense:                'Houve algum outro meio de defesa?'
+        has_underage:               'Houve menores de idade envolvidos?'
+        has_vehicle:                'Houve veículos envolvidos?'
+        has_environment_crime:      'Houve alteração ambiental? (Fauna, Flora ou Pluição)'
+        has_criminal_organization:  'Houve envolvimento de organização criminosa?'
+        has_transit_crime:          'Houve crime de trânsito?'
+        has_gun_seizure:            'Houve apreensão de arma de fogo?'
+        has_damaged_object:         'Houve dano a objeto?'
+        has_gun_use:                'Houve uso de arma de fogo?'
+
+      police_report/participant:
+        physical_condition:     'Informações Biométricas'
+        nickname:               'Apelido'
+        name:                   'Nome Completo'
+        birth_date:             'Data de Nascimento'
+        father:                 'Nome do Pai'
+        mother:                 'Nome do Mãe'
+        personal_id:            'Identidade'
+        personal_id_issuer:     'Orgão Emissor'
+        personal_id_issue_date: 'Data de Emissão'
+        state:                  'Estado'
+        gender:                 'Sexo'
+        nationality:            'Nacionalidade'
+        place_of_birth:         'Naturalidade'
+        marital_status:         'Situação Conjugal'
+        education_level:        'Escolaridade'
+        occupation:             'Profissão'
+        address:                'Endereço'
+        number:                 'Número'
+        complement:             'Complemento'
+        zip_code:               'CEP'
+        neighbourhood:          'Bairro'
+        city:                   'Cidade'
+        home_phone:             'Telefone Fixo'
+        cellphone:              'Celular'
+        email:                  'Email'
+        cpf:                    'CPF'
+
+      police_report/seized_object:
+        model:                  'Modelo'
+        maker:                  'Fabricante'
+        color:                  'Cor'
+        caliber:                'Calibre'
+        ammunition_number:      'Quantidade de Munições'
+        number:                 'Numeração'
+        tag:                    'Placa'
+        year:                   'Ano de Fabricação'
+        chassis:                'Número do Chassi'
+        object_type:            'Tipo'
+        quantity:               'Quantidade'
+        description:            'Descrição'
+
+    errors:
+      messages:
+        blank:                  'não pode ser em branco.'
+        invalid:                'invalido'
+        taken:                  'já cadastrado'
+        required:               'é obrigatória'
+
+
+# Kaminari Pagination
+  views:
+    pagination:
+      first: 'Primeira'
+      last: 'Última'
+      next: 'Próxima'
+      previous: 'Anterior'

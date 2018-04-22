@@ -1,0 +1,74 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+pt-BR:
+  devise:
+    confirmations:
+      confirmed: "Seu email foi confirmado com sucesso."
+      send_instructions: "Você receberá um email com instrunções em alguns minutos."
+      send_paranoid_instructions: "Se seu email já existir em nosso banco de dados, você receberá um email com instrunções em alguns minutos"
+    failure:
+      already_authenticated: "Você já realizou o login."
+      inactive: "Sua conta ainda não foi ativada."
+      invalid: "%{authentication_keys} ou senha invalidos."
+      locked: "Sou conta foi bloqueada. Verifique seu email para desbloquear."
+      last_attempt: "Você tem mais uma tentativa antes que sua conta seja bloqueada."
+      not_found_in_database: "%{authentication_keys} ou senha invalidos."
+      timeout: "Sua sessão expirou. faça o login novamente."
+      unauthenticated: "Por favor, realize o login."
+      unconfirmed: "Você precisa confirmar seu email para continuar."
+    mailer:
+      confirmation_instructions:
+        subject: "Instruções de Confirmação"
+      reset_password_instructions:
+        subject: "Instruções para resetar sua senha"
+      unlock_instructions:
+        subject: "Instruções para desbloqueio"
+      password_change:
+        subject: "Senha atualizada"
+    omniauth_callbacks:
+      failure: "Não foi possível autenticar você por %{kind} porque \"%{reason}\"."
+      success: "Autenticação concluída com exito por %{kind}."
+    passwords:
+      no_token: "Você não pode acessar essa página sem um link de reset de senha enviado por email. Confira se o link está completo."
+      send_instructions: "Você receberá um email com as instruções de como resetar a sua senha em alguns minutos. verifique seu email."
+      send_paranoid_instructions: "Se seu email já existir em nosso banco de dados, você receberá um email com instrunções para recuperação de senha em alguns minutos."
+      updated: "Sua senha foi atualizada. Você já está logado."
+      updated_not_active: "Sua senha foi alterada com sucesso."
+    registrations:
+      destroyed: "Sua conta foi permanentemente cancelada."
+      signed_up: "Bem vindo! você realizou o login com sucesso."
+      signed_up_but_inactive: "Você realizou o login, porém sua conta ainda não foi ativada."
+      signed_up_but_locked: "Você realizou o login, porém sua conta está bloqueada."
+      signed_up_but_unconfirmed: "Uma mensagem com o link de confirmação foi enviada para seu email. siga as instruções no email."
+      update_needs_confirmation: "Atualização realizada com sucesso, porém precisamos confirmar seu novo endereço de email. siga as instruções no link que te enviamos por email"
+      updated: "Sua conta foi atualizada com sucesso."
+    sessions:
+      signed_in: "Login realizado com sucesso."
+      signed_out: "Log out realizado com sucesso."
+      already_signed_out: "Log out realizado com sucesso."
+    unlocks:
+      send_instructions: "Você receberá um email com isntruções para desbloquear a sua conta em alguns minutos."
+      send_paranoid_instructions: "Se seu email já existir em nosso banco de dados, você receberá um email com instrunções para desbloqueio em alguns minutos."
+      unlocked: "Sua conta foi desbloqueada. Por favor, realize o login."
+  errors:
+    messages:
+      already_confirmed: "já foi confirmada. por favor, realize o login"
+      confirmation_period_expired: "precisa confirmar em %{period}, por favor, solicite uma nova."
+      expired: "expirou, por vafor, solicite uma nova."
+      not_found: "não encontrado"
+      not_locked: "não estava bloqueada."
+      not_saved:
+        one: "1 erro foi encontrado:"
+        other: "%{count} erros foram encontrados:"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: 'não pode ser em branco.'
+              too_short: 'muito curta. Mínimo de 8 caracteres.'
+            password_confirmation:
+              confirmation: 'é necessária.'
+            reset_password_token:
+              invalid: 'invalido. Por favor, solicite um novo link.'

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  functional: MyString
+  medical: MyString
+  juridical: MyString
+  special: MyString
+  alienation: MyString
+  disciplinary: MyString
+  gun_license: MyString
+  military: one
+
+two:
+  status: MyString
+  functional: MyString
+  medical: MyString
+  juridical: MyString
+  special: MyString
+  alienation: MyString
+  disciplinary: MyString
+  gun_license: MyString
+  military: two

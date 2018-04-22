@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>PMPB - Thor v1.0</title>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body class="hold-transition login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="#">
+          <b>Policia Militar</b>
+          PB</a>
+      </div>
+      <!-- /.login-logo -->
+
+      <% if flash.any? %>
+      <div class="alert alert-warning" style="text-align: center">
+        <i class="fa fa-exclamation-triangle"></i>
+        <span><%= flash['alert'] %></span>
+        <% if flash['notice'].present? %>
+          <span><%= flash['notice'] %></span>
+        <% end %>
+      </div>
+      <% end %>
+
+      <%= yield %>
+
+    </div>
+    <!-- /.login-box -->
+  </body>
+
+</html>

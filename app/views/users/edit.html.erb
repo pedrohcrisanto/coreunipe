@@ -1,0 +1,39 @@
+<% provide(:current_page, "Recursos Humanos") %>
+<% provide(:current_page_version, "Editar Usuário") %>
+
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-6">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Editar Usuario</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+
+      <%= form_for @user, html: { role: 'form'} do |f| %>
+        <div class="box-body">
+
+          <%= render 'fields', f: f, user: @user %>
+
+          <h3>Dados Pessoais</h3>
+          <%= f.fields_for :person do |p| %>
+          <%= render 'people/fields', p: p %>
+          <%= p.fields_for :address do |a| %>
+          <%= render 'addresses/fields', a: a %>
+          <% end %>
+        <% end %>
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <!-- /.box -->
+
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<%= form_with(model: triagem, local: true) do |form| %>
+  <% if triagem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(triagem.errors.count, "error") %> prohibited this triagem from being saved:</h2>
+
+      <ul>
+      <% triagem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nome_paciente %>
+    <br>
+    <%= form.text_field :nome_paciente, id: :triagem_nome_paciente %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :desc_hist_tratamento %>
+    <br>
+    <%= form.text_area :desc_hist_tratamento, id: :triagem_desc_hist_tratamento %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :desc_hist_medic %>
+    <br>
+    <%= form.text_area :desc_hist_medic, id: :triagem_desc_hist_medic %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :psicoterapia %>
+    <br>
+    <%= form.check_box :psicoterapia, id: :triagem_psicoterapia %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :queixa %>
+    <br>
+    <%= form.text_area :queixa, id: :triagem_queixa %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :estado_paciente %>
+    <br>
+    <%= form.text_field :estado_paciente, id: :triagem_estado_paciente %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Militaries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rank</th>
+      <th>Registration</th>
+      <th>Admission date</th>
+      <th>T shirt size</th>
+      <th>Boot size</th>
+      <th>Beret size</th>
+      <th>Pants size</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @militaries.each do |military| %>
+      <tr>
+        <td><%= military.name %></td>
+        <td><%= military.rank %></td>
+        <td><%= military.registration %></td>
+        <td><%= military.admission_date %></td>
+        <td><%= military.t_shirt_size %></td>
+        <td><%= military.boot_size %></td>
+        <td><%= military.beret_size %></td>
+        <td><%= military.pants_size %></td>
+        <td><%= military.user %></td>
+        <td><%= link_to 'Show', military %></td>
+        <td><%= link_to 'Edit', edit_military_path(military) %></td>
+        <td><%= link_to 'Destroy', military, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Military', new_military_path %>

@@ -1,0 +1,82 @@
+<% provide(:current_page, "Organização Policial Militar - OPM") %>
+<% provide(:current_page_version, "v1.0") %>
+
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <!-- form start -->
+        <%= form_for :search, url: opms_path, method: :get, html: {role: 'form'} do |f|%>
+          <div class="box-body">
+
+              <div class="form-group col-lg-4">
+                <%= f.label :name %>
+                <%= f.text_field :name, class: 'form-control', placeholder: 'busque pelo nome' %>
+              </div>
+
+            <div class="form-group col-lg-4">
+              <br />
+              <%= f.submit :buscar, class: 'btn btn-success' %>
+            </div>
+          </div>
+        <% end %>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 10px">#</th>
+              <th>Nome</th>
+              <th colspan="3">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @opms.empty? %>
+            <tr>
+              <td colspan="5" style="text-align: center"><h3>Nem uma OPM encontrada.</h3></td>
+            </tr>
+            <% end %>
+          <% @opms.each_with_index do |opm, index| %>
+          <tr>
+            <td><%= index+1 %></td>
+            <td class="col-xs-9">
+              <div class="row">
+                <div class="btn-group btn-breadcrumb">
+              <% opm_atual = opm %>
+              <a href="#" class="btn btn-primary"><i class="fa fa-institution"></i></a>
+              <a href="#" class="btn btn-primary"><%= opm_atual.name %></a>
+              <% until opm_atual.opm.nil?  do %>
+                <a href="#" class="btn btn-info"><%= opm_atual.opm.name %></a>
+                <% opm_atual = opm_atual.opm %>
+              <% end %>
+            </div>
+          </div>
+            </td>
+            <td class="col-xs-1">
+              <%= link_to opm_path(opm) do %>
+                <i class="fa fa-2x fa-eye"></i>
+              <% end %>
+            </td>
+            <td class="col-xs-1">
+              <%= link_to edit_opm_path(opm) do %>
+                <i class="fa fa-2x fa-edit"></i>
+              <% end %>
+            </td>
+            <td class="col-xs-1">
+              <%= link_to opm_path(opm), method: :delete, data: {confirm: "Voce tem certeza?"} do %>
+                <i class="fa fa-2x fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="box-footer clearfix">
+            <%= paginate @opms %>
+        </div>
+
+      </div>
+    </div>
+  </div>

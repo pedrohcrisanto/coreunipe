@@ -1,0 +1,57 @@
+<% provide(:current_page, 'Consultar Endereço') %>
+<div class="row">
+    <div class="col-xs-12">
+
+        <div class="box box-primary">
+<div class="box-body">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= :street %></th>
+      <th><%= t('number') %></th>
+      <th><%= t('city') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @addresses.empty? %>
+    <tr>
+        <td colspan="5" style="text-align: center">
+            <h3>Nem um Endereço encontrado.</h3>
+        </td>
+    </tr>
+    <% end %>
+    <% @addresses.each do |address| %>
+      <tr>
+        <td><%= address.street %></td>
+        <td><%= address.number %></td>
+        <td><%= address.city %></td>
+        <td class="col-xs-1">
+          <%= link_to address do %>
+          <i class="fa fa-2x fa-eye"></i>
+          <% end %>
+        </td>
+        <td class="col-xs-1">
+          <%= link_to edit_address_path(address) do %>
+          <i class="fa fa-2x fa-edit"></i>
+          <% end %>
+        </td>
+        <td class="col-xs-1">
+          <%= link_to address, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fa fa-2x fa-trash"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="box-footer clearfix">
+    <%= paginate @addresses %>
+</div>
+
+<br>
+
+<%= link_to t('new_address'), new_address_path,
+class: 'btn btn-primary' %>

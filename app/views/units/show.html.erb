@@ -1,0 +1,24 @@
+<% provide(:current_page, 'Unidade Militar') %>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <h3 class="profile-username text-center"><%= @unit.name %></h3>
+
+        <ul class="list-group list-group-unbordered">
+          <li class="list-group-item">
+            <b>Endereço:</b> <span class="pull-right"><%= @unit.address %></span>
+          </li>
+          <li class="list-group-item">
+            <b>CEP:</b> <span class="pull-right"><%= @unit.zip_code %></span>
+          </li>
+        </ul>
+      </div>
+      <!-- /.box-body -->
+    </div>
+
+
+  </div>
+</div>

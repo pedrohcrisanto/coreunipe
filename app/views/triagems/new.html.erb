@@ -1,0 +1,8 @@
+<h1>Nova Triagem</h1>
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+
+<%= render 'form', triagem: @triagem %>
+
+<%= link_to 'Voltar', triagems_path %>

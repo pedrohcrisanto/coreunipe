@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @military.name %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @military.rank %>
+</p>
+
+<p>
+  <strong>Registration:</strong>
+  <%= @military.registration %>
+</p>
+
+<p>
+  <strong>Admission date:</strong>
+  <%= @military.admission_date %>
+</p>
+
+<p>
+  <strong>T shirt size:</strong>
+  <%= @military.t_shirt_size %>
+</p>
+
+<p>
+  <strong>Boot size:</strong>
+  <%= @military.boot_size %>
+</p>
+
+<p>
+  <strong>Beret size:</strong>
+  <%= @military.beret_size %>
+</p>
+
+<p>
+  <strong>Pants size:</strong>
+  <%= @military.pants_size %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @military.user %>
+</p>
+
+<%= link_to 'Edit', edit_military_path(@military) %> |
+<%= link_to 'Back', militaries_path %>

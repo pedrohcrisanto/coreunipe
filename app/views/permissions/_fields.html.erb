@@ -1,0 +1,31 @@
+<%= render 'shared/errors', object: f.object %>
+
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control', placeholder: 'Ex: Armeiro'  %>
+</div>
+<div class="form-group">
+  <%= f.label :description %>
+  <%= f.text_field :description, class: 'form-control', placeholder: 'Descrição da Permissão' %>
+</div>
+
+<%= f.hidden_field 'role_ids[]', value: [] %>
+
+<div class="form-group">
+  <%= f.label :user_permissions, "Permissões Granulares"%>
+  <% @permissions.each do |controller| %>
+    <h3><%= t("controllers.#{controller[:name]}") %></h3>
+    <div class="row">
+      <% controller[:actions].sort.each do |action| %>
+        <div class="col-xs-6 col-md-6">
+          <div class="checkbox">
+            <label>
+              <%= check_box_tag "permissions[]", "#{controller[:name]}_#{action}", permission.has_role?("#{controller[:name]}_#{action}"), id: "#{controller[:name]}_#{action}" %>
+              <%= f.label t("controllers.actions.#{action}"), for: "#{controller[:name]}_#{action}" %>
+            </label>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

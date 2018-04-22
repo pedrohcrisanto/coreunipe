@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+
+<h1>Triagems</h1>
+<div class="box box-primary container box-body">
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome Paciente</th>
+      <th>Estado Paciente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @triagems.each do |triagem| %>
+      <tr>
+        <td><%= triagem.id %></td>
+        <td><%= triagem.nome_paciente %></td>
+        <td><%= triagem.estado_paciente %></td>
+        <td class="col-xs-1">
+          <%= link_to triagem_path(triagem) do %>
+            <i class="fa fa-2x fa-eye"></i>
+          <% end %>
+        </td>
+        <td class="col-xs-1">
+          <%= link_to edit_triagem_path(triagem) do %>
+            <i class="fa fa-2x fa-edit"></i>
+          <% end %>
+        </td>
+        <td class="col-xs-1">
+          <%= link_to triagem_path(triagem), method: :delete, data: {confirm: "Voce tem certeza?"} do %>
+            <i class="fa fa-2x fa-trash"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'Nova Triagem', new_triagem_path %>

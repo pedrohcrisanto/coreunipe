@@ -1,0 +1,31 @@
+<% provide(:current_page, "Organização Policial Militar - OPM") %>
+<% provide(:current_page_version, "Cadastrar OPM") %>
+
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Formulário de nova OPM</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+
+      <%= form_for @opm, html: { role: 'form'} do |f| %>
+        <div class="box-body">
+
+          <%= render 'fields', f: f %>
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <!-- /.box -->
+
+  </div>
+</div>

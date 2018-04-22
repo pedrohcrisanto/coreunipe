@@ -1,0 +1,9 @@
+<h1>Editando Triagem</h1>
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+
+<%= render 'form', triagem: @triagem %>
+
+<%= link_to 'Mostrar', @triagem %> |
+<%= link_to 'Voltar', triagems_path %>

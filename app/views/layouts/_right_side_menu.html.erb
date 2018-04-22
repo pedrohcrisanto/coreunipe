@@ -1,0 +1,58 @@
+<aside class="control-sidebar control-sidebar-dark aside-chat-width">
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <!-- Home tab content -->
+    <div class="tab-pane active" id="control-sidebar-home-tab">
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img class="img-circl`e" src="/assets/militar-0fe57f3b6787c5e9ad66cf7e2c6d17ed748042f087580b6939c9ba1e6fb75853.png" alt="Militar">
+        </div>
+        <div class="pull-left info">
+          Olá <strong><%= current_user.person.full_name.titleize %></strong>,
+          sou seu assistente e estou aqui para lhe auxiliar...
+        </div>
+      </div>
+      <h3 class="control-sidebar-heading">
+        Digite no chat a sua dúvida que lhe retornarei uma possível solução:
+      </h3>
+      <ul class="control-sidebar-menu">
+        <li>
+          <div class="col chat-box-right">
+              <!-- DIRECT CHAT PRIMARY -->
+              <div class="box box-primary direct-chat direct-chat-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Chat Assistente</h3>
+                  <div class="box-tools pull-right">
+                    <span data-toggle="tooltip" title="0 Novas Mensagens" class="badge bg-light-blue">0</span>
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <!-- Conversations are loaded here -->
+                  <div class="direct-chat-messages">
+                        Aqui será os diálogos
+                  </div>
+                  <!--/.direct-chat-messages-->
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <form action="#" method="post">
+                    <div class="input-group">
+                      <input type="text" name="message" placeholder="Digite sua dúvida aqui ..." class="form-control">
+                          <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary btn-flat">Enviar</button>
+                          </span>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.box-footer-->
+              </div>
+              <!--/.direct-chat -->
+          </div>
+        </li>
+      </ul>
+      <!-- /.control-sidebar-menu -->
+    </div>
+    <!-- /.tab-pane -->
+  </div>
+</aside>

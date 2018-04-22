@@ -1,0 +1,51 @@
+<!-- Left side column app. contains the tools -->
+<ul class="sidebar-menu">
+  <li class="header">FUNCIONALIDADES PESSOAIS</li>
+  <li>
+    <%= link_to user_permissions_path, :class => "aside-padding-left" do %>
+        <i class="icon-side-left fa fa-home bg-green" style="width: 35px;"></i>
+        <span>
+          <ul class="control-sidebar-menu">
+            <li>
+              <div class="menu-info">
+                  <h4 class="control-sidebar-subheading">Início</h4>
+                  <p>Permissões de Usuários</p>
+              </div>
+            </li>
+          </ul>
+        </span>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to new_user_permission_path, :class => "aside-padding-left" do %>
+      <i class="icon-side-left fa fa-pencil bg-yellow" style="width: 35px;"></i>
+      <span>
+        <ul class="control-sidebar-menu">
+          <li>
+            <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Conceder Permissões</h4>
+                <p>Alterar permissões de usuário</p>
+            </div>
+          </li>
+        </ul>
+      </span>
+    <% end %>
+  </li>
+
+  <li class="header">SISTEMA</li>
+  <li>
+    <%= link_to destroy_user_session_path, method: :delete, :class => "aside-padding-left" do %>
+      <i class="icon-side-left fa fa-sign-out bg-black" style="width: 35px;"></i>
+      <span>
+        <ul class="control-sidebar-menu">
+          <li>
+            <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Sair</h4>
+                <p>Desconectar do Sistema</p>
+            </div>
+          </li>
+        </ul>
+      </span>
+    <% end %>
+  </li>
+</ul>

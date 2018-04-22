@@ -1,0 +1,62 @@
+<%= form_for(situation) do |f| %>
+  <% if situation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(situation.errors.count, "error") %> prohibited this situation from being saved:</h2>
+
+      <ul>
+      <% situation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :functional %>
+    <%= f.text_field :functional %>
+  </div>
+
+  <div class="field">
+    <%= f.label :medical %>
+    <%= f.text_field :medical %>
+  </div>
+
+  <div class="field">
+    <%= f.label :juridical %>
+    <%= f.text_field :juridical %>
+  </div>
+
+  <div class="field">
+    <%= f.label :special %>
+    <%= f.text_field :special %>
+  </div>
+
+  <div class="field">
+    <%= f.label :alienation %>
+    <%= f.text_field :alienation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :disciplinary %>
+    <%= f.text_field :disciplinary %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gun_license %>
+    <%= f.text_field :gun_license %>
+  </div>
+
+  <div class="field">
+    <%= f.label :military_id %>
+    <%= f.text_field :military_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

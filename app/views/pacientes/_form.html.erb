@@ -1,0 +1,138 @@
+<%= form_with(model: paciente, local: true) do |form| %>
+  <% if paciente.errors.any? %>
+
+    <div id="error_explanation">
+      <h2><%= pluralize(paciente.errors.count, "error") %> prohibited this paciente from being saved:</h2>
+
+      <ul>
+      <% paciente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nome %>
+    <br>
+    <%= form.text_field :nome, id: :paciente_nome %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cep %>
+    <br>
+    <%= form.text_field :cep, id: :paciente_cep %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :complemento %>
+    <br>
+    <%= form.text_field :complemento, id: :paciente_complemento %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :telefone %>
+    <br>
+    <%= form.text_field :telefone, id: :paciente_telefone %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <br>
+    <%= form.text_field :email, id: :paciente_email %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :data_nasc %>
+    <br>
+    <%= form.date_select :data_nasc, id: :paciente_data_nasc %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :sexo %>
+    <br>
+    <%= form.text_field :sexo, id: :paciente_sexo %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :escolaridade %>
+    <br>
+    <%= form.text_field :escolaridade, id: :paciente_escolaridade %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :naturalidade %>
+    <br>
+    <%= form.text_field :naturalidade, id: :paciente_naturalidade %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :estado_civil %>
+    <br>
+    <%= form.text_field :estado_civil, id: :paciente_estado_civil %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :filhos %>
+    <br>
+    <%= form.check_box :filhos, id: :paciente_filhos %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :qnt_filhos %>
+    <br>
+    <%= form.number_field :qnt_filhos, id: :paciente_qnt_filhos %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :profissao %>
+    <br>
+    <%= form.text_field :profissao, id: :paciente_profissao %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :religiao %>
+    <br>
+    <%= form.text_field :religiao, id: :paciente_religiao %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :pm %>
+    <br>
+    <%= form.check_box :pm, id: :paciente_pm %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :matricula %>
+    <br>
+    <%= form.number_field :matricula, id: :paciente_matricula %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rg %>
+    <br>
+    <%= form.number_field :rg, id: :paciente_rg %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :graduacao %>
+    <br>
+    <%= form.text_field :graduacao, id: :paciente_graduacao %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :unidade %>
+    <br>
+    <%= form.text_field :unidade, id: :paciente_unidade %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :subunidade %>
+    <br>
+    <%= form.text_field :subunidade, id: :paciente_subunidade %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

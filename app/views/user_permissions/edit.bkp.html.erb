@@ -1,0 +1,164 @@
+<%= form_for @user_permissions, html: { role: 'form'} do |f| %>
+  <tr class="form-group">
+    <td class="btn btn-block" style="text-align: left">
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Nome'  %>
+      <font></font>
+    </td>
+    <td class="" id="">
+      <font>adbadbb</font>
+    </td>
+  </tr>
+<% end %>
+
+  <tr id="">
+    <td class="btn btn-block" style="text-align: left">
+      <font>eberbehuman_name</font>
+    </td>
+    <td>
+      <font>adicional</font>
+    </td>
+  </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% provide(:current_page, "Permissões de Usuários") %>  <!--Titulo no content header-->
+<% provide(:current_page_version, "Conceder Permissões") %> <!--Versão do aplicativo-->
+
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><font>Permissões disponíveis:</font></h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>
+                    <font>Papel</font>
+                  </th>
+                  <th>
+                    <font>Categoria</font>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @user_permissions.each do |user_permissao| %>
+                    <%= form_for user_permissao, html: { role: 'form'} do |f| %>
+                      <tr class="success" id="">
+                        <td class="btn btn-block" style="text-align: left">
+                          <font>çldhfbpdfb</font>
+                        </td>
+                        <td class="success-perm" id="rebrbe">
+                          <font>adbadbb</font>
+                        </td>
+                      </tr>
+                    <% end %>
+
+                      <tr id="">
+                        <td class="btn btn-block" style="text-align: left">
+                          <font>eberbehuman_name</font>
+                        </td>
+                        <td>
+                          <font>adicional</font>
+                        </td>
+                      </tr>
+                <% end %>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>
+                    <font>Papel</font>
+                  </th>
+                  <th>
+                    <font>Categoria</font>
+                  </th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-6">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title"><font>Permissões de <strong><%= "#{@user.person.full_name}" %> </strong></font></h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>
+                    <font>Papel</font>
+                  </th>
+                  <th>
+                    <font>Categoria</font>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @user_permissions.each do |user_permissao| %>
+                    <%= form_for user_permissao, html: { role: 'form'} do |f| %>
+                      <tr class="success" id="">
+                        <td class="btn btn-block" style="text-align: left">
+                          <font>çldhfbpdfb</font>
+                        </td>
+                        <td class="success-perm" id="rebrbe">
+                          <font>adbadbb</font>
+                        </td>
+                      </tr>
+                    <% end %>
+
+                      <tr id="">
+                        <td class="btn btn-block" style="text-align: left">
+                          <font>eberbehuman_name</font>
+                        </td>
+                        <td>
+                          <font>adicional</font>
+                        </td>
+                      </tr>
+                <% end %>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>
+                    <font>Papel</font>
+                  </th>
+                  <th>
+                    <font>Categoria</font>
+                  </th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+</div>

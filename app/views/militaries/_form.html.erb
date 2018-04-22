@@ -1,0 +1,62 @@
+<%= form_for(military) do |f| %>
+  <% if military.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(military.errors.count, "error") %> prohibited this military from being saved:</h2>
+
+      <ul>
+      <% military.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rank %>
+    <%= f.number_field :rank %>
+  </div>
+
+  <div class="field">
+    <%= f.label :registration %>
+    <%= f.text_field :registration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :admission_date %>
+    <%= f.date_select :admission_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :t_shirt_size %>
+    <%= f.number_field :t_shirt_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :boot_size %>
+    <%= f.number_field :boot_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :beret_size %>
+    <%= f.number_field :beret_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pants_size %>
+    <%= f.number_field :pants_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

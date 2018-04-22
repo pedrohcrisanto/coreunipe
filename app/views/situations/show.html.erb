@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @situation.status %>
+</p>
+
+<p>
+  <strong>Functional:</strong>
+  <%= @situation.functional %>
+</p>
+
+<p>
+  <strong>Medical:</strong>
+  <%= @situation.medical %>
+</p>
+
+<p>
+  <strong>Juridical:</strong>
+  <%= @situation.juridical %>
+</p>
+
+<p>
+  <strong>Special:</strong>
+  <%= @situation.special %>
+</p>
+
+<p>
+  <strong>Alienation:</strong>
+  <%= @situation.alienation %>
+</p>
+
+<p>
+  <strong>Disciplinary:</strong>
+  <%= @situation.disciplinary %>
+</p>
+
+<p>
+  <strong>Gun license:</strong>
+  <%= @situation.gun_license %>
+</p>
+
+<p>
+  <strong>Military:</strong>
+  <%= @situation.military %>
+</p>
+
+<%= link_to 'Edit', edit_situation_path(@situation) %> |
+<%= link_to 'Back', situations_path %>

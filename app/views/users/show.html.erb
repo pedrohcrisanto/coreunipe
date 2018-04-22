@@ -1,0 +1,38 @@
+<% provide(:current_page, 'Unidade Militar') %>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <%= image_tag 'militar.png', class: 'profile-user-img img-responsive img-circle' %>
+
+        <h3 class="profile-username text-center"><%= current_user.person.full_name %></h3>
+
+        <ul class="list-group list-group-unbordered">
+          <li class="list-group-item">
+            <b>Matrícula</b> <span class="pull-right">500.000-4</span>
+          </li>
+          <li class="list-group-item">
+            <b>Telefone</b> <span class="pull-right">(83) 987651234</span>
+          </li>
+          <li class="list-group-item">
+            <b>Email</b> <span class="pull-right"><%= @user.email %></span>
+          </li>
+        </ul>
+      </div>
+      <!-- /.box-body -->
+    </div>
+
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <h3>Situações</h3>
+        <!--  @user.situation do |f_situation| -->
+        <!-- render '../situations/fields', f: f_situation -->
+        <!-- end  -->
+      </div>
+      <!-- /.box-body -->
+    </div>
+
+  </div>
+</div>

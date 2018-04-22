@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Situations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Functional</th>
+      <th>Medical</th>
+      <th>Juridical</th>
+      <th>Special</th>
+      <th>Alienation</th>
+      <th>Disciplinary</th>
+      <th>Gun license</th>
+      <th>Military</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @situations.each do |situation| %>
+      <tr>
+        <td><%= situation.status %></td>
+        <td><%= situation.functional %></td>
+        <td><%= situation.medical %></td>
+        <td><%= situation.juridical %></td>
+        <td><%= situation.special %></td>
+        <td><%= situation.alienation %></td>
+        <td><%= situation.disciplinary %></td>
+        <td><%= situation.gun_license %></td>
+        <td><%= situation.military %></td>
+        <td><%= link_to 'Show', situation %></td>
+        <td><%= link_to 'Edit', edit_situation_path(situation) %></td>
+        <td><%= link_to 'Destroy', situation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Situation', new_situation_path %>

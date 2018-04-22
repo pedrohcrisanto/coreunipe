@@ -1,0 +1,54 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "adminlte";
+@import "datepicker3";
+@import "breadcrumbs";
+@import "skin-red";
+
+@media screen {
+  .control-sidebar-bg, .control-sidebar {
+      top: 0;
+      right: -50%;
+      width: 50%;
+      -webkit-transition: right 0.3s ease-in-out;
+      -o-transition: right 0.3s ease-in-out;
+      transition: right 0.3s ease-in-out;
+  }
+}
+@media (max-width: 767px) {
+  .control-sidebar-bg, .control-sidebar {
+      top: 0;
+      right: -100%;
+      width: 100%;
+      -webkit-transition: right 0.3s ease-in-out;
+      -o-transition: right 0.3s ease-in-out;
+      transition: right 0.3s ease-in-out;
+  }
+}
+.aside-padding-left{
+  padding-left: 5px !important;
+  height: 57px !important;
+}
+.aside-right-margim-right{
+  margin-right: 10px;
+}
+.right-margim-simple{
+  margin-right: 10px;
+}
+.altura{
+  height: 35px;
+}
+.chat-box-right{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.icon-side-left{
+    float: left;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 10px;
+}

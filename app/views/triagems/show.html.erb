@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<div class="box box-primary container box-body">
+  <% content_for :left_side do %>
+    <%= render 'left_side' %>
+  <% end %>
+
+<p>
+  <strong>Nome paciente:</strong>
+    <br>
+  <%= @triagem.nome_paciente %>
+</p>
+
+<p>
+  <strong>Desc hist tratamento:</strong>
+    <br>
+  <%= @triagem.desc_hist_tratamento %>
+</p>
+
+<p>
+  <strong>Desc hist medic:</strong>
+    <br>
+  <%= @triagem.desc_hist_medic %>
+</p>
+
+<p>
+  <strong>Psicoterapia:</strong>
+    <br>
+  <%= @triagem.psicoterapia %>
+</p>
+
+<p>
+  <strong>Queixa:</strong>
+    <br>
+  <%= @triagem.queixa %>
+</p>
+
+<p>
+  <strong>Estado paciente:</strong>
+    <br>
+  <%= @triagem.estado_paciente %>
+</p>
+</div>
+<%= link_to 'Editar', edit_triagem_path(@triagem) %> |
+<%= link_to 'Voltar', triagems_path %>

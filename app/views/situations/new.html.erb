@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-primary">
+      <div class="box-body box-profile">
+        <h3>Nova Situação</h3>
+
+        <%= form_for(@situation) do |f| %>
+        <%= render 'fields', f: f %>
+        <div class="box-footer">
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+        <% end %>
+      </div>
+      <!-- /.box-body -->
+    </div>
+  </div>
+</div>

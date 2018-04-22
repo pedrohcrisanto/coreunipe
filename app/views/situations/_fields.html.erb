@@ -1,0 +1,33 @@
+<%= render 'shared/errors', object: f.object %>
+
+<div class="form-group">
+  <%= f.label :status %>
+  <%= f.text_field :status, class: 'form-control', placeholder: 'Regime'  %>
+</div>
+<div class="form-group">
+  <%= f.label :functional %>
+  <%= f.text_field :functional, class: 'form-control', placeholder: 'Situação Funcional'  %>
+</div>
+<div class="form-group">
+  <%= f.label :medical %>
+  <%= f.text_field :medical, class: 'form-control', placeholder: 'Situação Médica'  %>
+</div>
+<div class="form-group">
+  <%= f.label :juridical %>
+  <%= f.text_field :juridical, class: 'form-control', placeholder: 'Situação Jurídica'  %>
+</div>
+<div class="form-group">
+  <%= f.label :special %>
+  <%= f.text_field :special, class: 'form-control', placeholder: 'Situação Especial'  %>
+</div>
+<div class="form-group">
+  <%= f.label :alienation %>
+  <%= f.text_field :alienation, class: 'form-control', placeholder: 'Afastamento'  %>
+</div>
+<div class="form-group">
+  <%= f.label :disciplinary %>
+  <%= f.text_field :disciplinary, class: 'form-control', placeholder: 'Situação Disciplinar'  %>
+</div>
+<div class="field">
+  <%= f.hidden_field :user_id %>
+</div>

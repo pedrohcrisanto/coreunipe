@@ -1,0 +1,59 @@
+<% provide(:current_page, "Permissões e Funções") %>
+<% provide(:current_page_version, "v1.0") %>
+
+<% content_for :left_side do %>
+  <%= render 'left_side' %>
+<% end %>
+
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div class="box box-primary">
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 10px">#</th>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Permissões</th>
+              <th colspan="2">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if @permissions.empty? %>
+            <tr>
+              <td colspan="5" style="text-align: center"><h3>Nem uma permissão encontrada.</h3></td>
+            </tr>
+            <% end %>
+          <% @permissions.each_with_index do |permission, index| %>
+          <tr>
+            <td><%= index+1 %></td>
+            <td class="col-xs-4"><%= permission.human_name %></td>
+            <td class="col-xs-2"><%= permission.description %></td>
+            <td class="col-xs-1">
+              <% permission.roles.each do |role| %>
+                <span class="label label-info"><%= role.name.humanize.titleize %></span>
+              <% end %>
+            </td>
+            <td class="col-xs-1">
+              <%= link_to edit_permission_path(permission) do %>
+                <i class="fa fa-2x fa-edit"></i>
+              <% end %>
+            </td>
+            <td class="col-xs-1">
+              <%= link_to permission_path(permission), method: :delete, data: {confirm: "Voce tem certeza?"} do %>
+                <i class="fa fa-2x fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <div class="box-footer clearfix">
+            <%= paginate @permissions %>
+        </div>
+
+      </div>
+    </div>
+</div>
