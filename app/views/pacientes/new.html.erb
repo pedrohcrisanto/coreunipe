@@ -1,8 +1,8 @@
 
-<h1>Novo Paciente</h1>
+<h1 class="text-center">Novo Paciente</h1>
 <% content_for :left_side do %>
   <%= render 'left_side' %>
 <% end %>
 <%= render 'form', paciente: @paciente %>
-
+<br>
 <%= link_to 'Voltar', pacientes_path %>

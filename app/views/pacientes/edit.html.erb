@@ -1,10 +1,10 @@
 
-<h1>Editando Paciente</h1>
+<h1 class="text-center">Editando Paciente</h1>
 
 <% content_for :left_side do %>
   <%= render 'left_side' %>
 <% end %>
 <%= render 'form', paciente: @paciente %>
-
+<br>
 <%= link_to 'Mostrar', @paciente %> |
 <%= link_to 'Voltar', pacientes_path %>

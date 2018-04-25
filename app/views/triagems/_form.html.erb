@@ -10,39 +10,39 @@
       </ul>
     </div>
   <% end %>
-
+<div class="box box-primary container box-body">
   <div class="form-group">
-    <%= form.label :nome_paciente %>
+     <label for="...">Nome Paciente</label>
     <br>
     <%= form.text_field :nome_paciente, id: :triagem_nome_paciente %>
   </div>
 
   <div class="form-group">
-    <%= form.label :desc_hist_tratamento %>
+       <label for="...">Descrição Histórico Tratamento</label>
     <br>
     <%= form.text_area :desc_hist_tratamento, id: :triagem_desc_hist_tratamento %>
   </div>
 
   <div class="form-group">
-    <%= form.label :desc_hist_medic %>
+       <label for="...">Descrição Histórico Médico</label>
     <br>
     <%= form.text_area :desc_hist_medic, id: :triagem_desc_hist_medic %>
   </div>
 
   <div class="form-group">
-    <%= form.label :psicoterapia %>
+       <label for="...">Psicoterapia</label>
     <br>
     <%= form.check_box :psicoterapia, id: :triagem_psicoterapia %>
   </div>
 
   <div class="form-group">
-    <%= form.label :queixa %>
+       <label for="...">Queixa</label>
     <br>
     <%= form.text_area :queixa, id: :triagem_queixa %>
   </div>
 
   <div class="form-group">
-    <%= form.label :estado_paciente %>
+       <label for="...">Estado Paciente</label>
     <br>
     <%= form.text_field :estado_paciente, id: :triagem_estado_paciente %>
   </div>
@@ -50,4 +50,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>

@@ -11,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-
+<div class="box box-primary container box-body">
   <div class="form-group">
     <%= form.label :nome %>
     <br>
@@ -19,7 +19,7 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :cep %>
+     <label for="...">CEP</label>
     <br>
     <%= form.text_field :cep, id: :paciente_cep %>
   </div>
@@ -37,13 +37,13 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :email %>
+     <label for="...">E-Mail</label>
     <br>
     <%= form.text_field :email, id: :paciente_email %>
   </div>
 
   <div class="form-group">
-    <%= form.label :data_nasc %>
+         <label for="...">Data Nascimento</label>
     <br>
     <%= form.date_select :data_nasc, id: :paciente_data_nasc %>
   </div>
@@ -67,7 +67,7 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :estado_civil %>
+     <label for="...">Estado Civil</label>
     <br>
     <%= form.text_field :estado_civil, id: :paciente_estado_civil %>
   </div>
@@ -79,43 +79,43 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :qnt_filhos %>
+     <label for="...">Quantidade Filhos</label>
     <br>
     <%= form.number_field :qnt_filhos, id: :paciente_qnt_filhos %>
   </div>
 
   <div class="form-group">
-    <%= form.label :profissao %>
+     <label for="...">Profissão</label>
     <br>
     <%= form.text_field :profissao, id: :paciente_profissao %>
   </div>
 
   <div class="form-group">
-    <%= form.label :religiao %>
+         <label for="...">Religião</label>
     <br>
     <%= form.text_field :religiao, id: :paciente_religiao %>
   </div>
 
   <div class="form-group">
-    <%= form.label :pm %>
+       <label for="...">Policial Militar</label>
     <br>
     <%= form.check_box :pm, id: :paciente_pm %>
   </div>
 
   <div class="form-group">
-    <%= form.label :matricula %>
+       <label for="...">Matrícula</label>
     <br>
     <%= form.number_field :matricula, id: :paciente_matricula %>
   </div>
 
   <div class="form-group">
-    <%= form.label :rg %>
+         <label for="...">RG</label>
     <br>
     <%= form.number_field :rg, id: :paciente_rg %>
   </div>
 
   <div class="form-group">
-    <%= form.label :graduacao %>
+         <label for="...">Graduação</label>
     <br>
     <%= form.text_field :graduacao, id: :paciente_graduacao %>
   </div>
@@ -127,7 +127,7 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :subunidade %>
+     <label for="...">Sub-Unidade</label>
     <br>
     <%= form.text_field :subunidade, id: :paciente_subunidade %>
   </div>
@@ -135,4 +135,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>
